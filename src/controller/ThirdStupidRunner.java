@@ -1,8 +1,9 @@
 package controller;
 
-public class ThirdStupidRunner {
+public class ThirdStupidRunner
+{
 
-	public static void main (String [] arges)
+	public static void main(String[] args)
 	{
 		ThirdController app = new ThirdController();
 		app.start();

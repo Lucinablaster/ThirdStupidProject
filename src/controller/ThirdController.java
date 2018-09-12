@@ -15,21 +15,7 @@ public class ThirdController
 		
 		moreInput();
 	}
-
-	private void moreInput() 
-	{
-		Scanner textScanner; // This is a declaration of a scanner variable.
-		
-		textScanner = new Scanner(System.in); // Initialization of the textScanner variable.
-		
-		System.out.println("Type in your favorite number");
-		
-		int userNumber = textScanner.nextInt();
-		
-		System.out.println("Your favorite number is: " + userNumber);// + squishes the variables together
-		
-		textScanner.close();
-	}	
+	
 	private void questions()
 	{
 		System.out.println("Johny Johny?");
@@ -37,36 +23,65 @@ public class ThirdController
 		
 		String answer = inputScanner.nextLine();
 		
-		if (answer == "Yes Papa?") {
-			
-			System.out.println("Eating sugar?");
+		if (answer == "Yes Papa?") 
+		{
+			System.out.println("Eating Sugar?");
 			answer = inputScanner.nextLine();
+		}
 			
-			if (answer == "No Papa") {
-			System.out.println("Telling lies");
-			answer = inputScanner.nextLine();
-				
-				if (answer == "No Papa") {
-					System.out.println("Open your mouth");
-					answer = inputScanner.nextLine();
-					System.out.println("That's my Johny!");
-				} 
-				else {
-					System.out.println("Who's this IMPOSTER?!");
-				}
-				
-			
-			} else {
-				System.out.println("You fake little child, I disown you.");
-			}
+	} 
 		
+	public boolean validInt(String sample) 
+	{
+		//Declares and initializes a boolean variable to false.
+		boolean isValid = false; //declaring a boolean variable
 		
-		} else {
-			System.out.println("You aren't Johny, get out!!!");
+		try
+		{
+			//Tries to convert the text to an integer...
+			Integer.parseInt(sample);
+			isValid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			System.out.println("You need to type in a number mammal!");
 		}
 		
-
-
+		return isValid;
 	}
+			
+	public boolean validDouble(String example)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Double.parseDouble(example);
+			isValid = true;
+		}
+		catch(NumberFormatException oops)
+		{
+			System.out.println("Only floating point values are accepted AKA a number with a . in it");
+		}
+		
+		return true; 
+	}
+			
+			
+	
+	private void moreInput() 
+		{
+			Scanner textScanner; // This is a declaration of a scanner variable.
+			
+			textScanner = new Scanner(System.in); // Initialization of the textScanner variable.
+			
+			System.out.println("Type in your favorite number");
+			
+			int userNumber = textScanner.nextInt();
+			
+			System.out.println("Your favorite number is: " + userNumber);// + squishes the variables together
+			
+			textScanner.close();
+		}	
 	
 }
